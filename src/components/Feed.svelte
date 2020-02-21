@@ -25,8 +25,8 @@
   }
     @media screen and (max-width: 400px) {
     .highlights-container {
-      grid-template-columns: repeat(2, 150px);
-      grid-template-rows: repeat(1, 150px);
+      grid-template-columns: repeat(1, 300px);
+      grid-template-rows: repeat(1, 300px);
     }
   }
 </style>

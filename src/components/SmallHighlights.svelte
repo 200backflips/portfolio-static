@@ -39,8 +39,8 @@
   }
   @media screen and (max-width: 400px) {
     .small-container {
-      grid-template-columns: repeat(2, 75px);
-      grid-template-rows: repeat(1, 75px);
+      grid-template-columns: repeat(2, 150px);
+      grid-template-rows: repeat(1, 150px);
     }
   }
 </style>

@@ -41,8 +41,8 @@
 
   @media screen and (max-width: 400px) {
     .other-container {
-      grid-template-columns: repeat(3, 100px);
-      grid-template-rows: repeat(1, 100px);
+      grid-template-columns: repeat(2, 150px);
+      grid-template-rows: repeat(1, 150px);
     }
   }
 </style>
