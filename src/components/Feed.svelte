@@ -2,6 +2,7 @@
   import BigHighlight from "./BigHighlight.svelte";
   import SmallHighlights from "./SmallHighlights.svelte";
   import OtherImages from "./OtherImages.svelte";
+  import IntersectionObserver from "./IntersectionObserver.svelte";
 </script>
 
 <style>
@@ -23,7 +24,7 @@
     grid-template-columns: repeat(2, 546px);
     grid-template-rows: repeat(1, 546px);
   }
-    @media screen and (max-width: 400px) {
+  @media screen and (max-width: 400px) {
     .highlights-container {
       grid-template-columns: repeat(1, 300px);
       grid-template-rows: repeat(1, 300px);
@@ -32,14 +33,22 @@
 </style>
 
 <div class="Feed">
-  <div class="highlights-container">
-    <BigHighlight order={0} />
-    <SmallHighlights order={[0, 3]} />
-  </div>
-  <OtherImages order={[0, 5]} />
-  <div class="highlights-container">
-    <BigHighlight order={1} />
-    <SmallHighlights order={[4, 7]} />
-  </div>
-  <OtherImages order={[6, 11]} />
+  <IntersectionObserver let:intersecting top={910}>
+    {#if intersecting}
+      <div class="highlights-container">
+        <BigHighlight order={0} />
+        <SmallHighlights order={[0, 3]} />
+      </div>
+    {/if}
+  </IntersectionObserver>
+  <IntersectionObserver let:intersecting top={1820}>
+    {#if intersecting}
+      <OtherImages order={[0, 5]} />
+      <div class="highlights-container">
+        <BigHighlight order={1} />
+        <SmallHighlights order={[4, 7]} />
+      </div>
+      <OtherImages order={[6, 11]} />
+    {/if}
+  </IntersectionObserver>
 </div>
