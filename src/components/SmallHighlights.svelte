@@ -1,5 +1,5 @@
 <script>
-  import { imageList } from "../stores.js";
+  import { imageList, isMobileBrowser } from "../stores.js";
   export let order = [];
   const [order1, order2] = order;
 </script>
@@ -50,12 +50,14 @@
     {#if placement === 'smallHighlight' && placementOrder >= order1 && placementOrder <= order2}
       <div class="small-highlight">
         <img src={path} alt="small-highlight" />
-        <div class="small-highlight-text">
-          <p>Brief: {brief}</p>
-          <p>ID: {id}</p>
-          <p>Tools: {tools}</p>
-          <p>Delivery: {delivery}</p>
-        </div>
+        {#if !$isMobileBrowser}
+          <div class="small-highlight-text">
+            <p>Brief: {brief}</p>
+            <p>ID: {id}</p>
+            <p>Tools: {tools}</p>
+            <p>Delivery: {delivery}</p>
+          </div>
+        {/if}
       </div>
     {/if}
   {/each}

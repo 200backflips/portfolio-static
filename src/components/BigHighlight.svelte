@@ -1,5 +1,5 @@
 <script>
-  import { imageList } from "../stores.js";
+  import { imageList, isMobileBrowser } from "../stores.js";
   export let order;
 </script>
 
@@ -38,12 +38,14 @@
   {#if placement === 'bigHighlight' && placementOrder === order}
     <div class="big-highlight">
       <img src={path} lazy={i > 1} alt="big-highlight" />
-      <div class="big-highlight-text">
-        <p>Brief: {brief}</p>
-        <p>ID: {id}</p>
-        <p>Tools: {tools}</p>
-        <p>Delivery: {delivery}</p>
-      </div>
+      {#if !$isMobileBrowser}
+        <div class="big-highlight-text">
+          <p>Brief: {brief}</p>
+          <p>ID: {id}</p>
+          <p>Tools: {tools}</p>
+          <p>Delivery: {delivery}</p>
+        </div>
+      {/if}
     </div>
   {/if}
 {/each}

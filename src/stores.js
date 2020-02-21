@@ -1,4 +1,8 @@
 import { readable } from 'svelte/store';
+import UAparser from 'ua-parser-js';
+
+const parser = new UAparser().getResult();
+export const isMobileBrowser = readable(parser.device.type === 'mobile');
 
 export const imageList = readable([
   {
