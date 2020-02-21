@@ -33,16 +33,12 @@
 </style>
 
 <div class="Feed">
-  <IntersectionObserver let:intersecting top={910}>
+  <IntersectionObserver let:intersecting top={400}>
     {#if intersecting}
       <div class="highlights-container">
         <BigHighlight order={0} />
         <SmallHighlights order={[0, 3]} />
       </div>
-    {/if}
-  </IntersectionObserver>
-  <IntersectionObserver let:intersecting top={1820}>
-    {#if intersecting}
       <OtherImages order={[0, 5]} />
       <div class="highlights-container">
         <BigHighlight order={1} />

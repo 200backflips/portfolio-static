@@ -5,5 +5,5 @@
 
 <main>
   <Header />
-    <Feed />
+  <Feed />
 </main>

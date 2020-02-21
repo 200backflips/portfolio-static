@@ -14,29 +14,39 @@
     position: relative;
     transition: ease-in-out 0.2s;
   }
-  .other-imgs:hover {
-    opacity: 0.6;
-  }
   .other-imgs > img {
-    position: relative;
     object-fit: cover;
     width: 100%;
-    padding: 0.1rem;
+    padding: 0.3%;
     transition: ease-in-out 0.2s;
   }
   .other-imgs-text {
     display: none;
     position: absolute;
-    width: 300px;
+    width: 80%;
     margin: 0 auto;
     left: 8%;
     top: 14%;
     color: #ffffff;
-    text-shadow: 2px 2px 3px #000000;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   .other-imgs:hover > .other-imgs-text {
     display: block;
+  }
+  .other-imgs:hover > .overlay {
+    display: block;
+    opacity: 0.8;
+  }
+
+  .overlay {
+    display: none;
+    position: absolute;
+    left: 0.2%;
+    top: 0.2%;
+    width: 99.6%;
+    height: 99.6%;
+    margin: 0 auto;
+    background: #000000;
   }
 
   @media screen and (max-width: 400px) {
@@ -51,6 +61,7 @@
   {#each $imageList as { placement, placementOrder, path, brief, id, tools, delivery }}
     {#if placement === 'otherImages' && placementOrder >= order1 && placementOrder <= order2}
       <div class="other-imgs">
+        <div class="overlay" />
         <img src={path} alt="other-images" />
         {#if !$isMobileBrowser}
           <div class="other-imgs-text">
