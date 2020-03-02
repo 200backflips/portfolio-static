@@ -17,10 +17,10 @@
     display: none;
     position: absolute;
     width: 80%;
-    left: 4%;
+    left: 6%;
     top: 18%;
     color: #ffffff;
-    font-size: 1.4rem;
+    font-size: calc(100vw / 55);
   }
   .big-highlight:hover > .big-highlight-text {
     display: block;

@@ -23,12 +23,11 @@
   .other-imgs-text {
     display: none;
     position: absolute;
-    width: 80%;
-    margin: 0 auto;
-    left: 8%;
+    width: 90%;
+    left: 4%;
     top: 14%;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: calc(100vw / 70);
   }
   .other-imgs:hover > .other-imgs-text {
     display: block;

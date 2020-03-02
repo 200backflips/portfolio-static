@@ -26,12 +26,11 @@
   .small-highlight-text {
     display: none;
     position: absolute;
-    width: 80%;
-    margin: 0 auto;
+    width: 90%;
     left: 6%;
-    top: 12%;
+    top: 14%;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: calc(100vw / 85);
   }
   .small-highlight:hover > .small-highlight-text {
     display: block;
