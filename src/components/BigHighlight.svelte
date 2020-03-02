@@ -35,9 +35,8 @@
     position: absolute;
     left: 0.2%;
     top: 0.2%;
-    width: 99.6%;
-    height: 99.6%;
-    margin: 0 auto;
+    width: 99.5%;
+    height: 99.5%;
     background: #000000;
   }
 </style>

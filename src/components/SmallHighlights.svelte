@@ -46,16 +46,15 @@
     position: absolute;
     left: 0.2%;
     top: 0.2%;
-    width: 99.6%;
-    height: 99.6%;
-    margin: 0 auto;
+    width: 99.5%;
+    height: 99.5%;
     background: #000000;
   }
 
   @media screen and (max-width: 600px) {
     .small-container {
       grid-template-columns: repeat(2, calc(100vw / 2.5));
-      grid-template-rows: repeat(1, calc(100vw / 1.25));
+      grid-template-rows: repeat(2, calc(100vw / 2.5));
     }
   }
 </style>
