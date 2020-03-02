@@ -24,7 +24,7 @@
     grid-template-columns: repeat(2, calc(100vw / 2.5));
     grid-template-rows: repeat(1, calc(100vw / 2.5));
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     .highlights-container {
       grid-template-columns: repeat(1, calc(100vw / 1.25));
       grid-template-rows: repeat(1, calc(100vw / 1.25));
