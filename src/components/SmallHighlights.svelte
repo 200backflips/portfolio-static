@@ -7,8 +7,8 @@
 <style>
   .small-container {
     display: grid;
-    grid-template-columns: repeat(2, 273px);
-    grid-template-rows: repeat(2, 273px);
+    grid-template-columns: repeat(2, calc(100vw / 5));
+    grid-template-rows: repeat(2, calc(100vw / 5));
   }
 
   .small-highlight {
@@ -52,10 +52,10 @@
     background: #000000;
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 600px) {
     .small-container {
-      grid-template-columns: repeat(2, 150px);
-      grid-template-rows: repeat(1, 150px);
+      grid-template-columns: repeat(2, calc(100vw / 2.5));
+      grid-template-rows: repeat(1, calc(100vw / 1.25));
     }
   }
 </style>
@@ -64,8 +64,8 @@
   {#each $imageList as { placement, placementOrder, path, brief, id, tools, delivery }}
     {#if placement === 'smallHighlight' && placementOrder >= order1 && placementOrder <= order2}
       <div class="small-highlight">
-      <div class="overlay" />
-        <img src={path} alt="small-highlight" />
+        <div class="overlay" />
+        <img loading="lazy" src={path} alt="small-highlight" />
         {#if !$isMobileBrowser}
           <div class="small-highlight-text">
             <p>Brief: {brief}</p>

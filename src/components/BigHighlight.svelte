@@ -46,13 +46,13 @@
   {#if placement === 'bigHighlight' && placementOrder === order}
     <div class="big-highlight">
       <div class="overlay" />
-      <img src={path} alt="big-highlight" />
-        <div class="big-highlight-text">
-          <p>Brief: {brief}</p>
-          <p>ID: {id}</p>
-          <p>Tools: {tools}</p>
-          <p>Delivery: {delivery}</p>
-        </div>
+      <img loading="lazy" src={path} alt="big-highlight" />
+      <div class="big-highlight-text">
+        <p>Brief: {brief}</p>
+        <p>ID: {id}</p>
+        <p>Tools: {tools}</p>
+        <p>Delivery: {delivery}</p>
+      </div>
     </div>
   {/if}
 {/each}

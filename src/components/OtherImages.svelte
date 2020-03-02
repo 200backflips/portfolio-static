@@ -7,8 +7,8 @@
 <style>
   .other-container {
     display: grid;
-    grid-template-columns: repeat(3, 364px);
-    grid-template-rows: repeat(1, 364px);
+    grid-template-columns: repeat(3, calc(100vw / 3.75));
+    grid-template-rows: repeat(1, calc(100vw / 3.75));
   }
   .other-imgs {
     position: relative;
@@ -49,10 +49,10 @@
     background: #000000;
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 600px) {
     .other-container {
-      grid-template-columns: repeat(2, 150px);
-      grid-template-rows: repeat(1, 150px);
+      grid-template-columns: repeat(2, calc(100vw / 2.5));
+      grid-template-rows: repeat(1, calc(100vw / 1.25));
     }
   }
 </style>
@@ -62,7 +62,7 @@
     {#if placement === 'otherImages' && placementOrder >= order1 && placementOrder <= order2}
       <div class="other-imgs">
         <div class="overlay" />
-        <img src={path} alt="other-images" />
+        <img loading="lazy" src={path} alt="other-images" />
         {#if !$isMobileBrowser}
           <div class="other-imgs-text">
             <p>Brief: {brief}</p>
