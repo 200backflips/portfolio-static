@@ -2,7 +2,6 @@
   import BigHighlight from "./BigHighlight.svelte";
   import SmallHighlights from "./SmallHighlights.svelte";
   import OtherImages from "./OtherImages.svelte";
-  import IntersectionObserver from "./IntersectionObserver.svelte";
 </script>
 
 <style>
@@ -33,18 +32,14 @@
 </style>
 
 <div class="Feed">
-  <IntersectionObserver let:intersecting top={400}>
-    {#if intersecting}
-      <div class="highlights-container">
-        <BigHighlight order={0} />
-        <SmallHighlights order={[0, 3]} />
-      </div>
-      <OtherImages order={[0, 5]} />
-      <div class="highlights-container">
-        <BigHighlight order={1} />
-        <SmallHighlights order={[4, 7]} />
-      </div>
-      <OtherImages order={[6, 11]} />
-    {/if}
-  </IntersectionObserver>
+  <div class="highlights-container">
+    <BigHighlight order={0} />
+    <SmallHighlights order={[0, 3]} />
+  </div>
+  <OtherImages order={[0, 5]} />
+  <div class="highlights-container">
+    <BigHighlight order={1} />
+    <SmallHighlights order={[4, 7]} />
+  </div>
+  <OtherImages order={[6, 11]} />
 </div>
